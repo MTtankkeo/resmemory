@@ -20,7 +20,7 @@ async function imageUpload(img) {
     const formattedFilename = `formatted+${paresedFilename}.webp`;
     const imageInfo = await sharp(img.filepath).metadata();
 
-    await sharp(img.filepath).toFormat('webp').toFile(`${formattedFilename}`);
+    await sharp(img.filepath).webp({ quality: 80 }).toFile(`${formattedFilename}`);
 
     let uploadParams = {
       Bucket: process.env.S3_AWS_BUCKET_NAME,
@@ -33,7 +33,7 @@ async function imageUpload(img) {
     });
 
     uploadParams.Body = fileStream;
-    uploadParams.ContentType = img.mimetype;
+    uploadParams.ContentType = imageInfo.format;
     const result = await s3.upload(uploadParams).promise();
     fs.unlinkSync(`${formattedFilename}`);
 
