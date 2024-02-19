@@ -1,0 +1,90 @@
+  .write-post-page {
+    margin: 0 auto;
+  }
+
+  .write-post-page > div {
+    max-width: 1200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-between;
+  }
+  
+  .write-post-page > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .annual-select,
+  .write-post-page > div > input,
+  .write-post-page > div > #content {
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    padding: 7px 0;
+  }
+
+
+  
+  .annual-select {
+    cursor: pointer;
+
+  }
+  
+  #image-path {
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    background: white;
+    width: 100%;
+  }
+  
+  .write-post-page input {
+    width: 100%;
+    cursor: text;
+  }
+  #image-upload {
+    font-size: 12px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 180px;
+  }
+  .write-post-page #content {
+    height: 300px;
+    width: 100%;
+    cursor: text;
+  }
+  #write-post-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  #write-post-buttons > button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  #post-cancle {
+    background: #c2c2c2;
+    color: black;
+  }
+  #post-write {
+    color: white;
+    background: #323232;
+  }
