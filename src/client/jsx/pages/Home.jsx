@@ -6,7 +6,6 @@ import { Masonry } from "../components/masonry.jsx";
 import { Button } from "../components/button.jsx";
 import { API } from "../../api.js";
 import { Post } from "../../data/post.js";
-import { LogoIcon } from "../../assets/icons/logo.jsx";
 import { NumberUtil } from "../../util/number.jsx";
 import { ArrayUtil } from "../../util/array.jsx";
 import { Disable } from "../components/disable.jsx";
@@ -14,6 +13,7 @@ import { Constraint, SizeBuilder } from "../components/size_builder.jsx";
 import { Listener } from "../components/listener.jsx";
 import { AsyncImg } from "../components/async_img.jsx";
 import { Option, OptionSelector } from "../components/option_selector.jsx";
+import { Header } from "../templates/Header.jsx";
 
 /**
  * @typedef {React.Dispatch<React.SetStateAction<Category>>} SetStatePost
@@ -180,19 +180,7 @@ const HeaderNotice = () => {
     )
 }
 
-/** @type {React.FC} */
-const Header = () => {
-    return (
-        <div className="header">
-            <LogoIcon />
-            <div className="nav">
-                <Button.Tertiary text="쓰레드" isNew={true} onClick={() => { console.log("hello world") }} />
-                <Button.Tertiary text="채팅" onClick={() => { console.log("hello world") }} />
-                <Button.Tertiary text="로그인 하기" onClick={() => { console.log("hello world") }} />
-            </div>
-        </div>
-    )
-}
+
 
 /** @type {React.FC} */
 const HeaderSelector = ({type, disabled}) => {
