@@ -331,17 +331,18 @@ const onRequest = async (res, method, pathname, params, key, cb) => {
             postIdString = postIds.join(',');
             sqlQuery = `SELECT postId, count(*) as count from Bookmarks WHERE postId IN (${postIdString}) GROUP BY postId`;
           } else if (postIds.length == 1) {
-            sqlQuery = `SELECT COUNT(*) as count from Bookmarks WHERE postId = ${postIds}`;
+            sqlQuery = `SELECT COUNT(*) as count from Bookmarks WHERE postId = ${postIds[0]}`;
           } else {
             responseData = { code: 210, result: null };
           }
 
           let bookmarks;
-          if (postIds.length > 1) {
+          if (postIds.length > 0) {
             bookmarks = await sequelize.query(sqlQuery);
+            responseData = { code: 211, result: bookmarks };
           }
 
-          responseData = { code: 211, result: bookmarks };
+         
         } catch (err) {
           console.log(err);
           responseData = { code: 210, result: null };
